@@ -1,0 +1,1 @@
+render partial: "airplane_user.json.jb", locals: {airplane_user: @airplane_user}

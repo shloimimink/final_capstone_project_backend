@@ -1,0 +1,5 @@
+{
+    id: airline.id,
+    name: airline.name,
+    class_type: airline.class_type,
+}

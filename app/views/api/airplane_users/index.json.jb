@@ -1,0 +1,3 @@
+@airplane_users.map do |airplane_user|
+  render partial: "airplane_user.json.jb", locals: {airplane_user: airplane_user}
+end

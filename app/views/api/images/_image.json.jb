@@ -1,0 +1,6 @@
+{
+    id: image.id,
+    url: image.url,
+    airplane_id: image.airplane_id,
+    user_id: image.user_id
+}

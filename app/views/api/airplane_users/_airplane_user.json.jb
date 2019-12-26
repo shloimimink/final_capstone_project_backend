@@ -1,0 +1,5 @@
+{
+    id: airplane_user.id,
+    airplane_id: airplane_user.airplane_id,
+    user_id: airplane_user.user_id
+}

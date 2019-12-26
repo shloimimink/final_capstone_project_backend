@@ -1,0 +1,12 @@
+{
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    phone: user.phone,
+    profile_picture: user.profile_picture,
+    location: user.location,
+    seat_preference: user.seat_preference,
+    class_preference: user.class_preference,
+    airport_preference: user.airport_preference
+}
+

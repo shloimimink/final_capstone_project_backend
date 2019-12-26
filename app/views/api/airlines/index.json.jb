@@ -1,0 +1,3 @@
+@airlines.map do |airline|
+  render partial: "airline.json.jb", locals: {airline: airline}
+end
