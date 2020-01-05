@@ -26,9 +26,12 @@ Rails.application.routes.draw do
     delete "images/:id" => "images#destroy"
 
     get "/airplane_users" => "airplane_users#index"
-    get "airplane_users/:id" => "airplane_users#show"
+    get "/airplane_users/:id" => "airplane_users#show"
     post "/airplane_users" => "airplane_users#create"
     patch "/airplane_users/:id" => "airplane_users#update"
     delete "/airplane_users/:id" => "airplane_users#destroy"
+
+    get "/airplanes" => "airplanes#index"
+
   end
 end

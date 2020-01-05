@@ -7,6 +7,17 @@
     location: user.location,
     seat_preference: user.seat_preference,
     class_preference: user.class_preference,
-    airport_preference: user.airport_preference
+    airport_preference: user.airport_preference,
+    favorites: user.airplane_users.map do |airplane_user|
+      {
+          id: airplane_user.id,
+          airplane_id: airplane_user.airplane_id,
+          airplane_model: airplane_user.airplane.model
+      }
+    end,
+    favorite_ids: user.airplane_users.map do |airplane_user|
+      airplane_user.airplane_id
+    end,
+    is_current_user: user.id == current_user.id
 }
 

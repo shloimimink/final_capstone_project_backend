@@ -1,5 +1,9 @@
 {
     id: airplane_user.id,
     airplane_id: airplane_user.airplane_id,
-    user_id: airplane_user.user_id
+    airplane_model: airplane_user.airplane.model,
+    airplane: airplane_user.airplane,
+    user_id: airplane_user.user_id,
+    user_name: airplane_user.user.name,
+    images: airplane_user.images
 }

@@ -10,12 +10,12 @@ class Api::AirplaneUsersController < ApplicationController
   end
 
   def create
-    airplane_user = AirplaneUser.new(
+    @airplane_user = AirplaneUser.new(
         airplane_id: params["airplane_id"],
-        user_id: params["user_id"]
+        user_id: current_user.id
     )
-    if airplane_user.save
-      render json: {message: "airplane_user successfully added"}
+    if @airplane_user.save
+      render "show.json.jb"
     else
       render json: {errors: user.errors.full_messages}, status: :bad_request
     end
@@ -24,7 +24,7 @@ class Api::AirplaneUsersController < ApplicationController
   def update
     @airplane_user = AirplaneUser.find_by(id: params["id"])
     @airplane_user.airplane_id = params["airplane_id"] || @airplane_user.airplane_id
-    @airplane_user.user_id = params["user_id"] || @airplane_user.user_id
+    #@airplane_user.user_id = params["user_id"] || @airplane_user.user_id
     @airplane_user.save
     render "show.json.jb"
   end

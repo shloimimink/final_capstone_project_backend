@@ -1,0 +1,4 @@
+{
+    id: airplane.id,
+    model: airplane.model
+}
