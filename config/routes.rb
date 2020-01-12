@@ -33,5 +33,6 @@ Rails.application.routes.draw do
 
     get "/airplanes" => "airplanes#index"
 
+    get "/news_apis" => "news_apis#index"
   end
 end

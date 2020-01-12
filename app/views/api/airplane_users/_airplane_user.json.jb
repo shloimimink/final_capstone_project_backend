@@ -5,5 +5,6 @@
     airplane: airplane_user.airplane,
     user_id: airplane_user.user_id,
     user_name: airplane_user.user.name,
-    images: airplane_user.images
+    images: airplane_user.images,
+    posts: airplane_user.posts
 }
