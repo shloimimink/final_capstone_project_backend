@@ -10,20 +10,28 @@ class Api::ImagesController < ApplicationController
   end
 
   def create
-    image = Image.new(
-        url: params["url"],
-        airplane_id: params["airplane_id"],
-        user_id: params["user_id"]
-    )
-    if image.save
-      render json: {message: "image created successfully"}
+    if params[:image_file]
+      response = Cloudinary::Uploader.upload(params[:image_file])
+      cloudinary_url = response["secure_url"]
     else
-      render json: {errors: user.errors.full_messages}, status: :bad_request
+      cloudinary_url = nil
+    end
+
+    @image = Image.new(
+        url: cloudinary_url,
+        airplane_id: params["airplane_id"],
+        user_id: current_user.id
+    )
+    if @image.save
+      render "show.json.jb"
+    else
+      render json: {errors: @image.errors.full_messages}, status: :bad_request
     end
   end
 
   def destroy
-    image = Image.find_by(id: params[:id])
+    #image = Image.find_by(id: params[:id])
+    image = current_user.images.find_by(id: params[:id])
     image.destroy
     render json: {message: "image deleted"}
   end

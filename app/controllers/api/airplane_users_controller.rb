@@ -12,7 +12,7 @@ class Api::AirplaneUsersController < ApplicationController
   def create
     @airplane_user = AirplaneUser.new(
         airplane_id: params["airplane_id"],
-        user_id: current_user.id
+        user_id: current_user.id,
     )
     if @airplane_user.save
       render "show.json.jb"
