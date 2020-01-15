@@ -1,6 +1,6 @@
 class Api::AirplaneUsersController < ApplicationController
   def index
-    @airplane_users = AirplaneUser.all
+    @airplane_users = current_user.airplane_users
     render "index.json.jb"
   end
 

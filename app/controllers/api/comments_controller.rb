@@ -10,15 +10,15 @@ class Api::CommentsController < ApplicationController
   end
 
   def create
-    comment = Comment.new(
+    @comment = Comment.new(
         text: params["text"],
         post_id: params["post_id"],
-        user_id: params["user_id"]
+        user_id: current_user.id
     )
-    if comment.save
-      render json: {message: "comment created successfully"}, status: :created
+    if @comment.save
+      render "show.json.jb"
     else
-      render json: {errors: user.errors.full_messages}, status: :bad_request
+      render json: {errors: @comment.errors.full_messages}, status: :bad_request
     end
   end
 

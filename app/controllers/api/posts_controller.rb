@@ -10,15 +10,15 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(
+    @post = Post.new(
         text: params["text"],
         user_id: current_user.id,
         airplane_id: params["airplane_id"]
     )
-    if post.save
-      render json: {massage: "post created successfully"}, status: :created
+    if @post.save
+      render "show.json.jb"
     else
-      render json: {errors: user.errors.full_messages}, status: :bad_request
+      render json: {errors: @post.errors.full_messages}, status: :bad_request
     end
   end
 

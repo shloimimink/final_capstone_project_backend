@@ -6,5 +6,11 @@
     user_id: airplane_user.user_id,
     user_name: airplane_user.user.name,
     images: airplane_user.images,
-    posts: airplane_user.posts
+    posts: airplane_user.posts.map do |post|
+      {
+          id: post.id,
+          text: post.text,
+          comments: post.comments
+      }
+    end
 }

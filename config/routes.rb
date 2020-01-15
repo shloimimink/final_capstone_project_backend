@@ -14,10 +14,12 @@ Rails.application.routes.draw do
     get "/airlines" => "airlines#index"
 
     get "/posts" => "posts#index"
+    get "/posts/:id" => "posts#show"
     post "/posts" => "posts#create"
     delete "/posts/:id" => "posts#destroy"
 
     get "/comments" => "comments#index"
+    get "/comments/:id" => "comments#show"
     post "/comments" => "comments#create"
     delete "/comments/:id" => "comments#destroy"
 

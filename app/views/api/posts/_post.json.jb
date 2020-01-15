@@ -2,6 +2,8 @@
     id: post.id,
     text: post.text,
     user_id: post.user_id,
-    airplane_id: post.airplane_id
+    airplane_id: post.airplane_id,
+    favorite_id: post.favorite.id,
+    comments: post.comments
 }
 
