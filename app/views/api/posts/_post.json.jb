@@ -4,6 +4,12 @@
     user_id: post.user_id,
     airplane_id: post.airplane_id,
     favorite_id: post.favorite.id,
-    comments: post.comments
+    comments: post.comments.map do |comment|
+      {
+          id: comment.id,
+          text: comment.text,
+          name: comment.user.name
+      }
+    end
 }
 
