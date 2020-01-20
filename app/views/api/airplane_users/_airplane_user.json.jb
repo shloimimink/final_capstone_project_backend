@@ -12,5 +12,6 @@
           text: post.text,
           comments: post.comments
       }
-    end
+    end,
+    is_current_user: airplane_user.user == current_user
 }

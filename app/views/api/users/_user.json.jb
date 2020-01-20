@@ -18,6 +18,8 @@
     favorite_ids: user.airplane_users.map do |airplane_user|
       airplane_user.airplane_id
     end,
-    is_current_user: user.id == (current_user && current_user.id)
+    is_current_user: user.id == (current_user&.id),
+    airline_id: user.airline_id,
+    airline_name: user.airline ? user.airline.name : ""
 }
 

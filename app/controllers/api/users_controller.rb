@@ -40,6 +40,7 @@ class Api::UsersController < ApplicationController
       @user.seat_preference = params["seat_preference"] || @user.seat_preference
       @user.class_preference = params["class_preference"] || @user.class_preference
       @user.airport_preference = params["airport_preference"] || @user.airport_preference
+      @user.airline_id = params["airline_id"] || @user.airline_id
       @user.save
       render "show.json.jb"
     else

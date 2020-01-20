@@ -4,11 +4,13 @@
     user_id: post.user_id,
     airplane_id: post.airplane_id,
     favorite_id: post.favorite.id,
+    is_current_user: post.user == current_user,
     comments: post.comments.map do |comment|
       {
           id: comment.id,
           text: comment.text,
-          name: comment.user.name
+          name: comment.user.name,
+          is_current_user: comment.user == current_user
       }
     end
 }
